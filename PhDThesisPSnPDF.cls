@@ -736,10 +736,11 @@ wish to left align your text}
 % ***************************** Header Formatting ******************************
 % Custom Header with Chapter Number, Page Number and Section Numbering
 
+%This is plain - will remove for final submission
 \RequirePackage{fancyhdr} % Define custom header
 
 % Style 1: Sets Page Number at the Top and Chapter/Section Name on LE/RO
-\fancypagestyle{PageStyleI}{
+\fancypagestyle{plain}{
   \renewcommand{\chaptermark}[1]{\markboth{##1}{}}
   \renewcommand{\sectionmark}[1]{\markright{\thesection\ ##1\ }}
   \fancyhf{}
@@ -750,7 +751,7 @@ wish to left align your text}
 }
 
 % Style 2: Sets Page Number at the Bottom with Chapter/Section Name on LO/RE
-\fancypagestyle{PageStyleII}{
+\fancypagestyle{plain}{
   \renewcommand{\chaptermark}[1]{\markboth{##1}{}}
   \renewcommand{\sectionmark}[1]{\markright{\thesection\ ##1}}
   \fancyhf{}
@@ -763,7 +764,7 @@ wish to left align your text}
 % Set Fancy Header Command is defined to Load FancyHdr after Geometry is defined
 \newcommand{\setFancyHdr}{
 
-\pagestyle{fancy}
+\pagestyle{plain}
 
 \ifPHD@pageStyleI
   % Style 1: Sets Page Number at the Top and Chapter/Section Name on LE/RO
@@ -773,7 +774,7 @@ wish to left align your text}
   \ifPHD@pageStyleII
 
   % Style 2: Sets Page Number at the Bottom with Chapter/Section Name on LO/RE
-  \pagestyle{PageStyleII}
+  \pagestyle{plain}
 
   \else
   % Default Style: Sets Page Number at the Top (LE/RO) with Chapter/Section Name
@@ -787,6 +788,60 @@ wish to left align your text}
   \fi
 \fi
 }
+
+
+% This is the original - without being plain
+% \RequirePackage{fancyhdr} % Define custom header
+
+% % Style 1: Sets Page Number at the Top and Chapter/Section Name on LE/RO
+% \fancypagestyle{PageStyleI}{
+%   \renewcommand{\chaptermark}[1]{\markboth{##1}{}}
+%   \renewcommand{\sectionmark}[1]{\markright{\thesection\ ##1\ }}
+%   \fancyhf{}
+%   \fancyhead[RO]{\nouppercase \rightmark\hspace{0.25em} | 
+%     \hspace{0.25em} \bfseries{\thepage}}
+%   \fancyhead[LE]{ {\bfseries\thepage} \hspace{0.25em} | 
+%     \hspace{0.25em} \nouppercase \leftmark}
+% }
+
+% % Style 2: Sets Page Number at the Bottom with Chapter/Section Name on LO/RE
+% \fancypagestyle{PageStyleII}{
+%   \renewcommand{\chaptermark}[1]{\markboth{##1}{}}
+%   \renewcommand{\sectionmark}[1]{\markright{\thesection\ ##1}}
+%   \fancyhf{}
+%   \fancyhead[RO]{\bfseries\nouppercase \rightmark}
+%   \fancyhead[LE]{\bfseries \nouppercase \leftmark}
+%   \fancyfoot[C]{\thepage}
+% }
+
+
+% % Set Fancy Header Command is defined to Load FancyHdr after Geometry is defined
+% \newcommand{\setFancyHdr}{
+
+% \pagestyle{fancy}
+
+% \ifPHD@pageStyleI
+%   % Style 1: Sets Page Number at the Top and Chapter/Section Name on LE/RO
+%   \pagestyle{PageStyleI}
+
+% \else
+%   \ifPHD@pageStyleII
+
+%   % Style 2: Sets Page Number at the Bottom with Chapter/Section Name on LO/RE
+%   \pagestyle{PageStyleII}
+
+%   \else
+%   % Default Style: Sets Page Number at the Top (LE/RO) with Chapter/Section Name
+%   % on LO/RE and an empty footer
+%     \renewcommand{\chaptermark}[1]{\markboth {##1}{}}
+%     \renewcommand{\sectionmark}[1]{\markright{\thesection\ ##1}}
+%     \fancyhf{}
+%     \fancyhead[LO]{\nouppercase \rightmark}
+%     \fancyhead[LE,RO]{\bfseries\thepage}
+%     \fancyhead[RE]{\nouppercase \leftmark}
+%   \fi
+% \fi
+% }
 
 \setlength{\headheight}{14.5pt}
 %\renewcommand{\headrulewidth}{0.5pt}
