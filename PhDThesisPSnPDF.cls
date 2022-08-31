@@ -789,9 +789,9 @@ wish to left align your text}
 \fi
 }
 
-
-% % This is the original - without being plain
-% % \RequirePackage{fancyhdr} % Define custom header
+% ---------------------------------
+% This is the original - without being plain
+% \RequirePackage{fancyhdr} % Define custom header
 
 % % Style 1: Sets Page Number at the Top and Chapter/Section Name on LE/RO
 % \fancypagestyle{PageStyleI}{
